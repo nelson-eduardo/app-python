@@ -32,36 +32,50 @@ with header:
     st.text("Neste projecto,desenvolvo um projecto de python com a platoforma Streamlit...")
 
 with dataset:
-    st.header("Os recurrso de dados para esta analise foram tiradas")
-    st.text("Uma base de dados bem estruturado, tirado da plataforma nelson domingos Eduardo")
+    
+    # Importacao dos dataset
     df_Produtos = pd.read_csv('Produtos.csv')
     df_Movimentos = pd.read_csv('Movimentos.csv')
     df_Clientes = pd.read_csv('Clientes.csv')
-    st.write(df_Movimentos.head(15))
+    
+    st.header("Tabela do Dataset Movimentos")
+    st.text("Tabela com todos os registos dos movimentos feito no banco")
+    st.write(df_Movimentos.head(5))
+
+    st.header("Tabela do Dataset Clientes")
+    st.text("Tabela com todos os registos de todos os clientes no banco")
+
+    Total_linhas = int(df_Clientes['RowNumber'].count())
+    st.write(Total_linhas)
+    sel_col, disp_col = st.columns(2)
+    slicerClientes = sel_col.slider("Qual seria o valor para a profundidade", min_value= 0, max_value= Total_linhas , step=1, value=0)
+    st.write(df_Clientes.head(slicerClientes))
+    
+    
     st.subheader('Legenda para onosso grafico...!')
 
-#     sel_col, disp_col = st.columns(2)
-#     max1 = sel_col.slider("Qual seria o valor para a profundidade", min_value= 0, max_value= 100, step=1, value=0)
-#     teste = pd.DataFrame(df_Movimentos['block_id'].value_counts()).head(max1)
-#     # st.bar_chart(teste)
+    
+    
+    # teste = pd.DataFrame(df_Movimentos['CustomerId'].value_counts()).head(max1)
+    # st.bar_chart(teste)
 
-# with feature:
-#     st.header("APlicacao sobre os dados de eleicao geral em Angola 2022")
-#     st.text("Neste projecto,desenvolvo um projecto de python com a platoforma Streamlit...")
+with feature:
+    st.header("APlicacao sobre os dados de eleicao geral em Angola 2022")
+    st.text("Neste projecto,desenvolvo um projecto de python com a platoforma Streamlit...")
 
-# with model_training:
-#     st.header("APlicacao sobre os dados de eleicao geral em Angola 2022")
-#     # st.button("botao para download")
-#     # st.camera_input("Sorrir! Estas a ser filmado!")
-#     st.text("Neste projecto,desenvolvo um projecto de python com a platoforma Streamlit...")
+with model_training:
+    st.header("APlicacao sobre os dados de eleicao geral em Angola 2022")
+    # st.button("botao para download")
+    # st.camera_input("Sorrir! Estas a ser filmado!")
+    st.text("Neste projecto,desenvolvo um projecto de python com a platoforma Streamlit...")
 
 
-# # Novos testes
-# sel_col1, disp_col = st.columns(2)
-# # max_diph = sel_col.slider("Qual seria o valor para a profundidade", min_value= 10, max_value= 100, step=1, value=0)
+# Novos testes
+sel_col1, disp_col = st.columns(2)
+# max_diph = sel_col.slider("Qual seria o valor para a profundidade", min_value= 10, max_value= 100, step=1, value=0)
 
-# bloco_selecao = sel_col.selectbox("Seleciona uma das opcoes",["Homem", "Mulher", "Nenhum"])
-# entrada = st.text_input("Digita qualquer coisa", 'categorias')
+bloco_selecao = sel_col.selectbox("Seleciona uma das opcoes",["Homem", "Mulher", "Nenhum"])
+entrada = st.text_input("Digita qualquer coisa", 'categorias')
 
-# # st.write(max_diph)
-# st.write(bloco_selecao)
+# st.write(max_diph)
+st.write(bloco_selecao)
