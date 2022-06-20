@@ -1,7 +1,7 @@
 # Importacao das princnipais bibliotecas
 
 from email import header
-# from turtle import color
+from turtle import color
 from click import style
 import streamlit as st
 import pandas as pd
