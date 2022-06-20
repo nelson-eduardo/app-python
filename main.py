@@ -1,7 +1,7 @@
 # Importacao das princnipais bibliotecas
 
 from email import header
-from turtle import color
+# from turtle import color
 from click import style
 import streamlit as st
 import pandas as pd
@@ -37,13 +37,13 @@ with dataset:
     df_Produtos = pd.read_csv('Produtos.csv')
     df_Movimentos = pd.read_csv('Movimentos.csv')
     df_Clientes = pd.read_csv('Clientes.csv')
-    st.write(df.head(5))
+    # st.write(df.head(5))
     st.subheader('Legenda para onosso grafico...!')
 
     sel_col, disp_col = st.columns(2)
     max1 = sel_col.slider("Qual seria o valor para a profundidade", min_value= 0, max_value= 100, step=1, value=0)
-    teste = pd.DataFrame(df['block_id'].value_counts()).head(max1)
-    st.bar_chart(teste)
+    # teste = pd.DataFrame(df['block_id'].value_counts()).head(max1)
+    # st.bar_chart(teste)
 
 with feature:
     st.header("APlicacao sobre os dados de eleicao geral em Angola 2022")
