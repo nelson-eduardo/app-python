@@ -37,7 +37,7 @@ with dataset:
     df_Produtos = pd.read_csv('Produtos.csv')
     df_Movimentos = pd.read_csv('Movimentos.csv')
     df_Clientes = pd.read_csv('Clientes.csv')
-    st.write(df_Movimentos.head(5))
+    st.write(df_Movimentos.head(15))
     st.subheader('Legenda para onosso grafico...!')
 
 #     sel_col, disp_col = st.columns(2)
