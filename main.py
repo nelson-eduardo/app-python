@@ -34,7 +34,9 @@ with header:
 with dataset:
     st.header("Os recurrso de dados para esta analise foram tiradas")
     st.text("Uma base de dados bem estruturado, tirado da plataforma nelson domingos Eduardo")
-    df = pd.read_csv('data/2015_Street_Tree_Census_Data.csv')
+    df_Produtos = pd.read_csv('Produtos.csv')
+    df_Movimentos = pd.read_csv('Movimentos.csv')
+    df_Clientes = pd.read_csv('Clientes.csv')
     st.write(df.head(5))
     st.subheader('Legenda para onosso grafico...!')
 
